@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+   
+    
+      </style>
+      </head>
+      <body>
+     
+      <div class="headers">
+       <nav class="nav-bar" >
+         <div>
+          <a style="color:white" class='nav-b1' href="index.html">Simulator</a>  
+        </div> 
+        <div>
+          <a style="color:white" class='nav-b2' href="about.html">Despre</a> 
+          <a style="color:white" class='nav-b3' href="contact.html">Contact</a>  
+         
+        </div>
+      </nav>
+     </div>
+
+      <div class="header">
+        <h1> Studiul Modelelor Dinamicii Insulina-Glucoza si al Algoritmilor de Reglare </h1>
+      </div>
+      
+    <title>Document</title>
+    <link rel="stylesheet" href="stil.css" type="text/css">
+
+    
+</head>
+
+
+<body class="bodyy">
+ <!--   <nav class="nav-bar" >
+        <a style="color:white" class='nav-b1' href="index.html">Simulator</a>   
+        <a style="color:white" class='nav-b2' href="contact.html">Contact</a>   
+        <a style="color:white" class='nav-b3' href="about.html">About</a>   
+    </nav>
+  -->
+    <div style="overflow:auto">
+      <div class="menu">
+        <img src="../poze/ecuati.JPG" width=150% height=150%>
+      <!--  <a href="insulina.html" style="font-weight: bold; font-size:18px; text-decoration:none;">Insulina</a>
+        <a href="reglare.html"  style="font-weight: bold; font-size:18px; text-decoration:none;">Ingineria Reglarii</a>
+        <a href="pghtml.html"  style="font-weight: bold; font-size:18px; text-decoration:none;">Dezvoltare web</a>
+      --> </div>
+      
+        <div class="main">
+         <!-- <h2 style=text-align:center;>Insulina</h2>-->
+          <p  style="font-size:large; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight:500; text-align: justify;" >
+           <strong>Modelul sistemului insulina glucoza</strong>. Probabil cel mai folosit model de descriere a efectului injectarii unei rate de insulina si disturbarea nivelului de glucoza din sange este  modificat prin 
+            <font color="red">Modelul minimal a lui Bergman </font> . In forma initiala , modelul descrie cinetica concentratiei de glucoza si insulina din sangein timpul unei tolerantela glucoza intravenoasa. Astfel ca in forma initiala modelul minim este compartimentat in 3 ecuatii, cu una neliniara.
+         
+        </p>
+        </div>
+      </div>
+    
+    <div class="tabela" >
+     <h3 style="text-align: center;">Variabilele și parametrii modelului</h3>
+      <table>
+        <tr>
+          <th>Notatii</th>
+          <th>Descriere</th>
+        </tr>
+        <tr>
+          <td>G(t)</td>
+          <td>Concentratia de glucoza</td>
+        </tr>
+        <tr>
+          <td>I(t)</td>
+          <td>Concentratia de insulina</td>
+        </tr>
+        <tr>
+          <td>X(t)</td>
+          <td>Raspunsul dinamic la insulina</td>
+        </tr>
+        <tr>
+          <td>Gb</td>
+          <td>Nivelul de baza al glucozei</td>
+        </tr>
+        <tr>
+          <td>u(t)</td>
+          <td>Dozaj insulina</td>
+        </tr>
+        <tr>
+          <td>p1</td>
+          <td>Rata de absortie a glucozei in tesut</td>
+        </tr>
+        <tr>
+          <td>p2</td>
+          <td>Rata de reducere a concentratiei active</td>
+        </tr>
+        <tr>
+          <td>p3</td>
+          <td>Rata de absortie a gluzocei</td>
+        </tr>
+        <tr>
+          <td>n</td>
+          <td>Rata de descrestere a concentratiei de insulina</td>
+        </tr>
+        <tr>
+          <td>V</td>
+          <td>Volum de distributie a insulinei</td>
+        </tr>
+        <tr>
+          <td>Dg</td>
+          <td>Cantitatea totala de carbohidrati</td>
+        </tr>
+        <tr>
+          <td>u(t)</td>
+          <td>Dozaj insulina</td>
+        </tr>
+        <tr>
+          <td>Ag</td>
+          <td>Factor ce descrie procentul din cantitatea totala</td>
+        </tr>
+        <tr>
+          <td>tgmax</td>
+          <td>Moment de timp aproximativ</td>
+        </tr>
+
+      </table>
+    </div>
+    <div class="descriu">
+      <p style="font-size:large; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight:500; ">
+        <strong>Mărimea de ieșire</strong>  a procesului condus (mărimea reglată) este concentrația de glucoză în sânge,   [mg/dL], iar <strong>mărimile de intrare</strong> ale modelului sunt dozajul de insulină administrată,   [mU/min], și <strong>perturbatia de glucoză</strong>,   [mg/min], ce apare după masă. Modelul descrie relația dintre insulina administrată și concentrația de glucoză, dar și efectul unei perturbații de glucoză apărută în sistem. 
+      </p>
+    </div>
+     
+    <footer>
+      <p>Ingineria Reglarii Automate<br>
+    
+    </footer>
+</body>
+</html>

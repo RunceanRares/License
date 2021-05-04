@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stil.css" type="text/css">
+    <style>
+      
+        </style>
+    
+    
+</head>
+
+<body  class="bodyys">
+
+  <div>
+    <nav class="nav-bar" >
+        <a style="color:white" class='nav-b1'href="page.html">Acasa</a>     
+    </nav>
+  </div>
+
+<div>
+  <div>
+    <h2 style="text-align: center;"> 
+      Realizare model dinamic inuslina-glucoza
+    </h2>
+    <h3 style="text-align: center;">
+      Algoritmi de reglare MATLAB & SIMULINK
+    </h3>
+  </div>
+
+  <div>
+  <div class="responsive">
+    <div class="gallery">
+        <img src="../poze/mor.JPG" alt="Cinque Terre" width="600" height="500">
+      <div class="desc">1.1.Schema simulare regulator </div>
+    </div>
+</div>
+  
+  
+  <div class="responsive">
+    <div class="gallery">
+        <img src="../poze/cap3.JPG" alt="Forest" width="600" height="400">
+      <div class="desc">1.2.Schema bloc generala a estimatorului si regulatorului de stare</div>
+    </div>
+  </div>
+
+  <div class="responsive">
+    <div class="gallery">
+        <img src="../poze/cap1.jpg" alt="Northern Lights" width="600" height="400">
+      <div class="desc">1.3.Reprezentarea grafica a ecuatilor lui Bergman</div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div class="functie">
+  <h3>Funcția de transfer a procesului</h3>
+</div>
+<div>
+   <div>
+     <p  style="font-size:medium; font-family:Verdana, Geneva, Tahoma, sans-serif, serif; font-weight:300; padding-left: 30px; ">
+      Observăm că prima ecuație prezintă o neliniaritate, prin termenul 𝑋(𝑡)𝐺(𝑡), astfel 
+      va trebui să liniarizăm modelul după care să determinăm funcția de transfer a procesului.
+      În urma liniarizării, am obținut următorul model care ne permite să aflăm funcția de transfer a 
+      procesului:</br><strong>
+      𝑑𝐺(𝑡)/𝑑𝑡 = −𝑝1𝐺(𝑡) − 𝑋(𝑡)𝐺̅− 𝑋̅𝐺(𝑡) +𝑝(𝑡)/𝑉</br>
+      𝑑𝑋(𝑡)/𝑑𝑡 = −𝑝2𝑋(𝑡) + 𝑝3𝐼(𝑡)</br>
+      𝑑𝐼(𝑡)/𝑑𝑡 = −𝑛𝐼(𝑡) +𝑢(𝑡)
+    </strong></br>
+    În continuare, vom aplica Transformata Laplace fiecărei ecuații și vom scoate funcțiile I(s), X(s) 
+și G(s), iar in final dupa inlocuiri rezulta functia de transfer a procesului.</br>
+<strong>
+  𝐺𝑝𝑟𝑜𝑐𝑒𝑠(𝑠) =𝐺(𝑠)/𝑈(𝑠)=−𝑝3*(𝐺̅/𝑉)/(𝑠 + 𝑝1 + 𝑋̅)(𝑠 + 𝑝2)(𝑠 + 𝑛)</br>
+</strong>
+În urma ecuației rezultate, se determină regulatorul.</br>
+În urma calculelor realizate și a expresiilor obținute, s-a trecut în mediul de simulare <strong> SIMULINK</strong>, în care au fost introduse rezultatele obținute.
+In figura <strong>1.1</strong> este ilustrata <strong>schema pentru simulare a regulatorului</strong> . In cadrul schemei a implementat pentru cele 2 cazuri, cu si fara perturbatie.
+</br>In figura <strong>1.3</strong> este ilustrata <strong>modelul minimal Bergman</strong> , a celor 3 ecuatii. In figura <strong>1.2</strong>
+este ilustrata <strong>schema bloc generala a estimatorului si regulatorului de stare.</strong> </br> </br></p>
+
+ <h3 style="padding-left: 30px;">Structura de reglare după stare</h3>
+ <p style="font-size:medium; font-family:Verdana, Geneva, Tahoma, sans-serif, serif; font-weight:300; padding-left: 30px; ">
+  Având modelul liniarizat, vom determina sistemul de reglare modelat la stare, adică 
+  matricea variabilelor de stare A, vectorul intrărilor B și vectorul ieșirilor C, având în vedere 
+  următoarele ecuații:</br>
+  <strong>
+  𝑥̇(𝑡) = 𝐴 ∗ 𝑥(𝑡) + 𝐵 ∗ 𝑢(𝑡)</br>
+  𝑦(𝑡) = 𝐶 ∗ 𝑥(𝑡)</br>
+</strong>
+ Cu ajutorul lor se determina controlabilitatea sistemului. In cele din urma se trece la calcularea polilor impusi pentru a obtine performanțele impuse. Se calculeaza polinomul caracteristic pentru determinarea celor 2 vectori.
+ </p></br>
+
+     <div class="responsive">
+      <div class="gallery">
+          <img src="../poze/grafic.JPG" alt="Northern Lights" width="600" height="400">
+        <div>1.4. Reprezentare grafica a nivelului de glucoza</div>
+      </div>
+    </div>
+    
+    <div>
+   
+     <h3 style="padding-left: 35%;">Concluzii</h3> 
+     <p style="font-size:medium; font-family:Verdana, Geneva, Tahoma, sans-serif, serif; font-weight:300; padding-left: 30px; ">
+      <strong>Structura de reglare convențională</strong> , proiectată cu criteriul modulului varianta Kessler atinge 
+      performanțele impuse până în clipa în care apare perturbația, atunci când timpul de stabilizare 
+      crește semnificativ, depășindu-l pe cel impus în datele de proiectare. Pentru a elimina 
+      suprareglajul am folosit un bloc MAX care oprește administarea de insulină atunci când glicemia 
+      atinge valoarea normală de 80 mg/dL. Proiecatarea cu această metodă este destul de ușoară dar 
+      performanțele obținute nu sunt chiar foarte bune.</br>
+     <strong>Structura de reglare după stare</strong>  necesită o proiectare mai complexă, calcularea a doi vectori 
+      pentru regulator respectiv estimator. Astfel, am calculat polii celor două elemente astfel încât 
+      estimatorul să aibă o dinamică mai rapidă decât regulatorul. Nici în acestă situație rezultatele nu 
+      au fost peste asteptari, aparand aceasi situatie a  pertubației, timpul de 
+      stabilizare depășindu-l pe cel impus.
+      Concluzionandu se situatia data de diferentele dintre cele doua fiind de ordinul minutelor. 
+      
+    </p>
+  </div>
+  </div>
+</div></br></br>
+<footer>
+  <p>Ingineria Reglarii Automate<br>
+</footer>
+</body>
+</html>

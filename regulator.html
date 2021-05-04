@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+	<title>Controlul regulatorului la stare</title>
+	
+	<meta name="description"	content="">
+	<meta name="keywords"		content="">
+    <meta name="author"			content="">
+	
+	
+	<link rel="stylesheet" href="css/import/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="stile.css">
+	
+	
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+
+<body>
+    <div>
+        <!-- Tab links -->
+	
+
+                <div class="tab">
+	            <button  ><a href="page.html" >Acasa</a></button>
+            <button ><a href="index.html">PID</a> </button>
+			<button ><a href="pidregulator.html">Regulator PID</a> </button>
+
+        </div>
+
+       
+    </div>
+
+	<div class="loader" id="main-loader"></div>
+	
+	<header id="site-header">
+	</header>
+	
+	
+	
+	<div id="settings-container">
+		<h1 style=" text-align: center;" >Controlul regulatorului la stare</h1>
+		
+		<div class="form-container">
+			<form id="parameters-form">
+				
+				<div class="parameters-group" id="group-1">
+					<div class="parameters-heading">
+						<a href="#help?1" class="fa fa-question-circle help-link"></a>
+						Modelul minimal
+					</div>
+
+					
+					<div class="parameters-group-heading">
+						<a href="#help?1" class="fa fa-question-circle help-link"></a>
+						<p style="font-size: large; text-align: center;" >Parametrii modelului minimal</p>
+					</div>
+					<div class="form-row">
+						<div class="form-field">
+							<label><span class="var">G<sub>b</sub></span> <span class="unit">[mg/dL]</span> = Valoarea de baza a concentrației de glucoză din sânge</label>
+							<input type="number" name="G_b" id="param___G_b" value="81">
+							
+						</div>
+						<div class="form-field">
+							<label><span class="var">p</span><sub>1</sub> <span class="unit">[1/min]</span> = Rata de absorbție a glucozei independent de insulină</label>
+							<input type="number" name="p_1" id="param___p_1" value="0">
+				
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="form-field">
+							<label><span class="var">p</span><sub>2</sub> <span class="unit">[1/min]</span> = Rata activă de scădere a insulinei</label>
+							<input type="number" name="p_2" id="param___p_2" value="0.025">
+					
+						</div>
+						<div class="form-field">
+							<label><span class="var">p</span><sub>3</sub> <span class="unit">[dL/(mU&#215;min<sup>2</sup>)]</span> = Creșterea absorbției glucozei dependentă de insulină</label>
+							<input type="number" name="p_3" id="param___p_3" value="0.000013" >
+						
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="form-field">
+							<label><span class="var">p</span><sub>4</sub> <span class="unit">[1/min]</span> = Rata de descompunere a insulinei din sânge</label>
+							<input type="number" name="p_4" id="param___p_4" value="0.0926">
+
+						</div>
+						<div class="form-field">
+							<label><span class="var">V</span><sub> </sub> <span class="unit">[dL]</span> = Volumul total de sânge</label>
+							<input type="number" name="V" id="param___V" value="120">
+							
+						</div>
+					</div>
+					
+					
+					<div class="parameters-group-heading">
+						<a href="#help?2" class="fa fa-question-circle help-link"></a>
+						<p style="font-size: large; text-align: center;" > Parametri suplimentari în modelul liniarizat</p>
+					</div>
+					<div class="form-row">
+						<div class="form-field">
+							<label><span class="var" style="text-decoration:overline;">G</span> <span class="unit">[mg/dL]</span> = Valoarea „nominală” a concentrației de glucoză din sânge</label>
+							<input type="number" name="G__" id="param___G___" value="81" >
+					
+						</div>
+						<div class="form-field">
+							<label><span class="var" style="text-decoration:overline;">X</span> <span class="unit">[mg/dL]</span> = Valoarea „nominală” a concentrației de insulină din compartimentul „îndepărtat”</label>
+							<input type="number" name="X__" id="param___X___" value="0" >
+						</div>
+					</div>
+					
+					<!--<div class="dataset-select" data-dataset-group="1" data-params-group="#group-1">
+						<a href="#" class="fa fa-folder-open dataset-select-toggle"></a>
+						<span class="current-dataset">Dataset: Custom</span>
+						<ul>
+							<li><a href="#help?3" class="fa fa-question-circle help-link"></a>
+								<a href="#" class="load-dataset" data-dataset="0">Default configuration</a>
+								<div class="hint r-hint">Default configuration [Chee-2009]</div>
+							</li>
+						</ul>
+					</div>-->
+				</div>
+
+
+				
+				<div class="parameters-group" id="group-2">
+					<div class="parameters-heading">
+						
+						<!--<a href="#help?1" class="fa fa-question-circle help-link"></a>-->
+						<p style="font-size: large; text-align: center;" > Parametrii regulatorului</p>
+					</div>
+					
+					
+				<!--<div class="parameters-group-heading">
+						<a href="#help?3" class="fa fa-question-circle help-link"></a>
+						Settings for the table-based Mamdani inference
+					</div>-->
+					<div class="form-row">
+						<div class="form-field">
+							<label><span class="var">k<sub>1</sub></span> <span class="unit">[min]</span> = Parametrii proportionali</label>
+							<input type="number" name="k1" id="param_k1" value="180" >
+							
+						</div>
+						<div class="form-field">
+							<label><span class="var">k<sub>2</sub></span> <span class="unit">[min]</span> = Parametrii proportionali</label>
+							<input type="number" name="k2" id="param_k2" value="1">
+							
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="form-field">
+							<label><span class="var">k<sub>3</sub></span> <span class="unit">[min]</span> = Parametrii proportionali</label>
+							<input type="number" name="k3" id="param_k3" value="5">
+							
+						</div>
+					</div>
+					<!--	<div class="parameters-group-heading">
+						<a href="#help?3" class="fa fa-question-circle help-link"></a>
+						Settings for the adaptation mechanism
+					</div>
+					
+					
+				<div class="dataset-select" data-dataset-group="2" data-params-group="#group-2">
+						<a href="#" class="fa fa-folder-open dataset-select-toggle"></a>
+						<span class="current-dataset" data-permalink="">Dataset: Custom</span>
+						<ul>
+							<li><a href="#help?3" class="fa fa-question-circle help-link"></a>
+								<a href="#" class="load-dataset" data-dataset="0">Default</a>
+								<div class="hint r-hint">Default configuration</div>
+							</li>
+						</ul>
+					</div>-->
+				</div>
+				
+				
+				
+				<div class="parameters-group" id="group-3">
+					<div class="parameters-heading">
+						<a href="#help?3" class="fa fa-question-circle help-link"></a>
+						<p style="font-size: large; text-align: center;" >	Scenariu</p>
+					</div>
+					<div class="parameters-group-heading">
+					<!--<a href="#help?2" class="fa fa-question-circle help-link"></a>-->
+					Conditii initiale
+					</div>
+					<div class="form-row">
+						<div class="form-field">
+							<label><span style="font-style:italic;">G</span><sub>0</sub> <span class="unit">[mg/dL]</span> = Valoarea inițială a concentrației de glucoză din sânge</label>
+							<input type="number" name="G_0" id="param___G_0" value="300" >
+						
+						</div>
+					</div>
+					<!--<div class="dataset-select" data-dataset-group="3" data-params-group="#group-3">
+						<a href="#" class="fa fa-folder-open dataset-select-toggle"></a>
+						<span class="current-dataset">Dataset: Custom</span>
+						<ul>
+							<li><a href="#help?3" class="fa fa-question-circle help-link"></a>
+								<a href="#" class="load-dataset" data-dataset="0">Default</a>
+								<div class="hint r-hint">High initial glycaemia level</div>
+							</li>
+						</ul>
+					</div>-->
+				</div>
+				
+				
+				
+				<div class="parameters-group" id="group-9">
+					<div class="parameters-heading">
+						<a href="#help?1" class="fa fa-question-circle help-link"></a>
+						<p style="font-size: large; text-align: center;" >Simulator</p>
+					</div>
+					<div class="parameters-group-heading">
+						<!--<a href="#help?3" class="fa fa-question-circle help-link"></a>-->
+						<p style="text-align: center;"> Parametrii simulatorului</p>
+					</div>
+					<div class="form-row">
+						<div class="form-field">
+							<label><span class="var">T<sub>max</sub></span> <span class="unit">[min]</span> = Timp de oprire a simulării</label>
+							<input type="number" name="T_max" id="param___T_max" value="180" >
+							
+						</div>
+						<div class="form-field">
+							<label><span class="var">T<sub>e</sub></span> <span class="unit">[sec]</span> = Timpul fundamental de eșantionare</label>
+							<input type="number" name="T_e" id="param___T_e" value="1">
+							
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="form-field">
+							<label><span class="var">T<sub>e,c</sub></span> <span class="unit">[min]</span> = Timpul de eșantionare a controlerului</label>
+							<input type="number" name="T_e_c" id="param___T_e_c" value="5">
+							
+						</div>
+					</div>
+			
+				</div>
+				
+			</form>
+		</div>
+	</div>
+	
+	
+<style>
+	.wrapper {
+    text-align: center;
+}
+
+.button {
+    position: absolute;
+    top: 50%;
+}
+</style>
+
+	<div id="graphs-container">
+	<div id="graph-buttons" class="wrapper" >
+			<button class="red-button cmd" data-cmd="run" class="button">Run</button>
+		</div>
+		<div class="loader" id="graph-loader">
+		</div>
+		<div id="graph">
+		</div>
+		
+	</div>
+	
+	
+	
+	<footer id="site-footer">
+	</footer>
+	
+	<div id="viewport-detector"></div>
+	
+</body>
+
+<!-- JQuery -->
+<script type="text/javascript" src="js/import/jquery-2.0.3.min.js"></script>
+<!-- Form validation -->
+<script type="text/javascript" src="js/import/jquery.validate.min.js"></script>
+<!-- Custom script -->
+<script type="text/javascript" src="js/functions.js"></script>
+<!--
+<script type="text/javascript" src="js/experiments.js"></script>
+<script type="text/javascript" src="js/models.js"></script>
+<script type="text/javascript" src="js/simulation.js"></script>
+-->
+<script type="text/javascript" src="js/experiment1.js"></script>
+<script type="text/javascript" src="js/datasets.js"></script>
+<script type="text/javascript" src="js/application.js"></script>
+
+</html>
+
+
+

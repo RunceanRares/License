@@ -1,0 +1,122 @@
+
+
+/********************************************************************************/
+/* EXPERIMENT SETTINGS
+/********************************************************************************/
+
+/* Settings */
+#settings-container {
+	width: 100%;
+	min-height: 100%;
+	margin-left: 0;
+	margin-right: auto;
+	padding: 40px;
+	background: hsl(192, 55%, 43%);
+	color: rgb(3, 0, 0);
+	box-shadow: 2px 0px 4px 0px rgba(0,0,0,0.5);
+	line-height: 1.3333em;
+}
+
+
+#parameters-form {
+	border-top: 1px solid transparent;
+}
+
+
+
+.parameters-group {
+	margin-top: 50px;
+}
+.parameters-group .help-link {
+	float: right;
+	margin-left: 2em;
+	line-height: inherit;
+}
+
+
+
+.parameters-heading {
+	margin: 20px -15px 5px -15px;
+	padding: 10px;
+	font-size: 1.3333em;
+	background: #2bbbc0;
+	text-align: center;
+}
+.parameters-group-heading {
+	margin: 15px 0;
+}
+
+
+
+.parameters-group .dataset-select {
+	margin-left: -15px;
+	margin-right: -15px;
+	padding-left: 15px;
+	padding-right: 15px;
+	background: #2bbbc0;
+}
+
+/***/
+
+
+
+
+
+
+
+/********************************************************************************/
+/* GRAPHS
+/********************************************************************************/
+
+
+
+/* Graphs */
+#graphs-container {
+	
+	-webkit-transform: translateZ(0);
+	top: 0;
+	bottom: 0;
+	
+	padding: 20px 20px 80px 20px;
+}
+#graph {
+	width: 100%;
+	
+	border: 1px solid #000;
+}
+
+
+#graph-loader {
+	position: absolute;
+	z-index: -99;
+	
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #fefefe url('../img/gears.gif') 50% 50% no-repeat;
+	opacity: 0;
+	-webkit-transition: opacity 0.35s ease, z-index 0s ease 0.4s;
+	   -moz-transition: opacity 0.35s ease, z-index 0s ease 0.4s;
+		-ms-transition: opacity 0.35s ease, z-index 0s ease 0.4s;
+		 -o-transition: opacity 0.35s ease, z-index 0s ease 0.4s;
+			transition: opacity 0.35s ease, z-index 0s ease 0.4s;
+}
+#graph-loader.on {
+	z-index: 99;
+	opacity: 1;
+	min-height:400px;
+	-webkit-transition: opacity 0.35s ease, z-index 0s ease 0s;
+	   -moz-transition: opacity 0.35s ease, z-index 0s ease 0s;
+		-ms-transition: opacity 0.35s ease, z-index 0s ease 0s;
+		 -o-transition: opacity 0.35s ease, z-index 0s ease 0s;
+			transition: opacity 0.35s ease, z-index 0s ease 0s;	
+}
+
+
+/* Graph buttons */
+#graph-buttons {
+	margin-top: 20px;
+}
+/***/
+

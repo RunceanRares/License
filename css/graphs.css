@@ -1,0 +1,68 @@
+/********************************************************************************/
+/* GRAPHS
+/********************************************************************************/
+
+
+
+.experiment > .graphs {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 400px;
+	right: 60px;
+	margin: 20px;
+	border: 1px solid #000;
+}
+
+.loading-graphs {
+	position: absolute;
+	z-index: -99;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #fefefe url('../img/gears.gif') 50% 50% no-repeat;
+	opacity: 0;
+	-webkit-transition: opacity 0.35s ease, z-index 0s ease 0.4s;
+	   -moz-transition: opacity 0.35s ease, z-index 0s ease 0.4s;
+		-ms-transition: opacity 0.35s ease, z-index 0s ease 0.4s;
+		 -o-transition: opacity 0.35s ease, z-index 0s ease 0.4s;
+			transition: opacity 0.35s ease, z-index 0s ease 0.4s;
+}
+.loading-graphs.on {
+	z-index: 99;
+	opacity: 1;
+	-webkit-transition: opacity 0.35s ease, z-index 0s ease 0s;
+	   -moz-transition: opacity 0.35s ease, z-index 0s ease 0s;
+		-ms-transition: opacity 0.35s ease, z-index 0s ease 0s;
+		 -o-transition: opacity 0.35s ease, z-index 0s ease 0s;
+			transition: opacity 0.35s ease, z-index 0s ease 0s;	
+}
+
+
+.experiment .graph {
+	//width: 100%;
+	height: 100%;
+}
+
+
+
+/* Graph controls*/
+.graph-controls {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: -60px;
+	width: 60px;
+	padding: 0 10px;
+}
+.graph-controls button {
+	min-width: 40px;
+	width: 40px;
+	height: 40px;
+}
+/***/
+
+/********************************************************************************/
+
+
